@@ -1,0 +1,19 @@
+{
+    "$id": "http://example.com/schemas/vertices.json",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "latitude": {
+                "type": "string",
+                "pattern": "^(\\+|-)?(?:90(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]{1,7})?))$"
+            },
+            "longitude": {
+                "type": "string",
+                "pattern": "^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,7})?))$"
+            }
+        },
+        "additionalProperties": false,
+        "required": ["latitude", "longitude"]
+    }
+}

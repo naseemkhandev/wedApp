@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.create-btn {
+  cursor: pointer;
+}
+.text-base {
+  color: #9c27b0;
+}
+.listScroll::-webkit-scrollbar {
+    width: 0px;
+  }
+  

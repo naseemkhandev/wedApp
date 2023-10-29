@@ -1,0 +1,10 @@
+{
+    "local":{
+        "POSTGDB":"wedding",
+        "POSTGHOST":"localhost",
+        "POSTGUSER":"postgres",
+        "POSTGPASS":"India@12345",
+        "POSTGPORT":"5432"
+        
+    }
+}

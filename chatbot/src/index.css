@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  font-family: "Josefin Sans", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+body {
+  background-color: #f8f0ec;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+body::before {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://i.postimg.cc/zXGCSqJD/bgmandala-1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+iframe {
+  border-radius: 12px;
+}
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagebox {
+  margin-bottom: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+.frombox {
+  background-color: #f7998e;
+  color: white;
+  width: 330px;
+  padding: 1rem;
+  border-radius: 0 18px 18px;
+  overflow: hidden;
+}
+.frombox form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+label {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+label input {
+  width: 100%;
+  border: none;
+  padding: 5px;
+  border-radius: 0 5px;
+}
+input:focus {
+  outline: none;
+}
+
+.getbox {
+  display: flex;
+  flex-direction: column;
+}
+.lists {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.list {
+  display: flex;
+  border: 2px solid lightblue;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.PopUp {
+  position: fixed;
+
+  left: 25%;
+  top: 30%;
+
+  width: 50%;
+
+  border: 1px solid #011627;
+  border-radius: 1em;
+  box-shadow: -2px 5px 5px #e71d36;
+
+  background-color: #fdfffc;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #011627;
+}
+.during-popup {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+/* .moving-text-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.moving-text {
+  animation: marquee 5s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+} */
+
+.mandala::after {
+  content: "";
+  background: url("https://i.postimg.cc/zXGCSqJD/bgmandala-1.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+}
