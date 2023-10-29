@@ -1,0 +1,14 @@
+{
+  "ext": ".js ,.mjs,.json,.yaml",
+  "ignore": ["node_modules/*", "logs/*"],
+  "env": {
+    "NODE_ENV": "local",
+    "PORT": 8500,
+    "ALLOWED_ORIGIN": ["http://localhost:3100"],
+    "MONGO_URL": "mongodb+srv://wedding:2580@cluster0.on5vjba.mongodb.net/Wedding",
+
+    "CLOUD_NAME": "dcsouj6ix",
+    "CLOUD_API": 534915584656534,
+    "CLOUD_SECRET": "NNTdXtTW2G34on_a5JvcgAcgKp4"
+  }
+}

@@ -1,0 +1,124 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.list {
+  display: flex;
+  width: 100%;
+  .listContainer {
+    flex: 6;
+  }
+}
+.imageBox{
+ display:flex;
+ align-items: flex-start;
+}
+.imageList{
+  width:80px;
+  padding:12px 12px;
+  display:flex;
+  flex-direction: column;
+
+ 
+}
+.imagecollection{
+ display:flex;
+ flex-direction: row;
+.heading-4{
+  margin-top: 20px;
+  padding: 8px;
+}
+ a{
+  font-size:12px;
+  text-decoration:none;
+:hover{
+
+  text-decoration:underline;
+}
+ }
+}
+h3{
+  color:rgb(78, 76, 76);
+  font-size:16px;
+  padding:10px;
+}
+p{
+  color:rgb(78, 76, 76);
+  font-size:14px;
+  padding: 8px 5px 0 10px;
+}
+.subList{
+  span{
+    color:rgb(174, 118, 226);
+  }
+}
+.PaddingCustom{
+  padding:25px;
+}
+.closeIcon{
+  float:right;
+  background: none;
+  border: none;
+}
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.newContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subList {
+  display: flex;
+ 
+}
+
+
+.subList span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagecollection {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 0 0 33.33%;
+  padding: 10px;
+}
+
+.column h2 {
+  margin-bottom: 10px;
+}
+
+.column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.column p {
+  margin-top: 10px;
+}

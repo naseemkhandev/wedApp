@@ -1,0 +1,1014 @@
+
+<!------------ ADD INVITE USER START------------>
+
+1. ADD INVITE USER | POST -> http://localhost:8500/api/adduser
+     //body->form-data:
+     {
+        loginId:__,
+        guestEmail:__,
+        guestName:__,
+        guestStatus:__,
+        inviteType:__
+     }   
+
+2.  GET | getalluser -> http://localhost:8500/api/adduser
+
+<!------------ ADD INVITE USER END------------>
+
+
+<!-- ---------  AUTHENTICATION START--------- -->
+
+3. POST | REGISTER -> http://localhost:8500/api/auth/register
+
+            //body->form-data:
+            {
+            authName:"Akash",
+            authEmail:"akash@gmail.com",
+            authPassword:"123456"
+            }
+
+4. POST | LOGIN -> http://localhost:8500/api/auth/login
+
+            //body->form-data:
+            {
+                authEmail:"akash@gmail.com",
+                authPassword:"123456"
+            }
+
+<!-- ---------  AUTHENTICATION END--------- -->
+
+<!-- -------- PHOTO COLLECTION START-------------- -->
+
+5. POST | ADD COLLECTION: -> http://localhost:8500/api/auth/add-collection
+    //body->form-data:
+    {
+    authId:"(login \_id)",
+    collectionName:"Anything",
+    inviteType:"general/close"
+    photos:{
+    multiple files
+    }
+    }
+
+6. POST | ADD MORE PHOTOS: -> http://localhost:8500/api/auth/add-morephoto
+
+                {
+                    collectionId:(collection _id),
+                    photos:{
+
+                    }
+                }
+
+7. GET | GET PARTICULER USER COLLECTIONS: -> http://localhost:8500/api/auth/get-collection?authId=(login \_id)
+
+            //Params:
+             {
+               authId:"(login _id)"
+            }
+
+8. IMAGE LIKE | PUT API : 
+                     http://localhost:8500/api/auth/photos/:photoId/like
+
+                    {
+                        browserId:___________,
+                    }
+<!-- -------- PHOTO COLLECTION END-------------- -->
+
+
+<!-- -------- VIDEO COLLECTION START-------------- -->
+
+9. POST | ADD VIDEO COLLECTION: -> http://localhost:8500/api/auth/add-video-collection
+   //body->form-data:
+   {
+   authId:"(login \_id)",
+   videoCollectionName:"Anything",
+   inviteType:"general/close"
+   videos:{
+   multiple files
+   }
+   }
+
+10. POST | ADD MORE VIDEOS: -> http://localhost:8500/api/auth/add-video-more
+
+                {
+                    collectionId:(collection _id),
+                    videos:{
+
+                    }
+                }
+
+11. GET | GET PARTICULER USER VIDEO COLLECTIONS: -> http://localhost:8500/api/auth//get-video-collection?authId=6464855699641087a53b46e0
+
+            //Params:
+             {
+               authId:"(login _id)"
+            }
+
+12. VIDEO LIKE | PUT API : 
+                     http://localhost:8500/api/auth/videos/:videoId/like
+
+                    {
+                        browserId:___________,
+                    }
+
+<!-- -------- VIDEO COLLECTION END-------------- -->
+
+<!-- --------POLLS START---------- -->
+
+13. POST | ADD POLL:
+    API: http://localhost:8500/api/auth/polls
+
+    //body->form data:
+    {
+    authId:__,
+    inviteType:__,
+    question:__,
+    options:__,
+    options:__,
+    options:__,
+    options:___,
+    }
+
+14. PUT | Update the vote count on click particular option:
+API: http://localhost:8500/api/auth/polls/:id/vote
+
+            //Params:
+             {
+               id:"(poll _id)"
+            }
+
+            //body->form data:
+                optionIndex : (option _id),
+
+15. GET | Get specific polls by authId:
+API: http://localhost:8500/api/auth/get-polls?authId=(auth \_id)
+
+         //Params:
+             {
+               authId:"(login _id)"
+             }
+
+16. VOTE POLL BY UID | API : 
+                    http://localhost:8500/api/auth/polls/:optionId/vote
+
+                    {
+                        browserId:_______,  
+                    }
+<!-- --------POLLS END---------- -->
+
+
+<!-- -------------- MUSIC PLAYLIST START--------------->
+
+17. POST | Create Music playlist:
+
+        API: http://localhost:8500/api/auth/playlists
+
+        //body->form data:
+        	{
+                authId:________,
+                inviteType:__________,
+                playListName:_________,
+                playListUrl:________,
+
+        	}
+
+18. GET | Get specific Playlist by authId:
+API : http://localhost:8500/api/auth/get-playlists?authId=6464855699641087a53b46e0
+
+        //Params:
+             {
+               authId:"(login _id)"
+             }
+
+19. ADD MORE in PLAYLIST | API :
+                    http://localhost:8500/api/auth/add-more-songs/:playlistId
+
+                    {
+                        "songs": [
+                            {
+                            "name": "Song 1",
+                            "externalUrl": "https://example.com/song1"
+                            },
+                            {
+                            "name": "Song 2",
+                            "externalUrl": "https://example.com/song2"
+                            }
+                        ]
+                    }
+<!-- -------------- MUSIC PLAYLIST END--------------->
+
+<!-- -------------GIFT REGISTRY START------------- -->
+
+20. POST | Create Gift list:
+
+        API: http://localhost:8500/api/auth/giftlists
+
+         //body->form data:
+        	{
+                authId:________,
+                inviteType:__________,
+                userName:___________,
+                giftName:_________,
+                receivedGift: Boolean value -> true or false,
+
+        	}
+
+21. GET | Get specific Gift List by authId:
+API : http://localhost:8500/api/auth/get-giftlists?authId=6464855699641087a53b46e0
+
+        //Params:
+             {
+               authId:"(login _id)"
+             }
+
+22. PUT | Update receivedGift status:
+API: http://localhost:8500/api/auth/giftlists/:id/gift
+
+            //Params:
+             {
+               id:"(giftlists _id)"
+            }
+
+            //body->form data:
+                 receivedGift: Boolean value -> true or false,
+
+23. DELETE a gift by ID | API :
+                 http://localhost:8500/api/auth/delete-giftlist/:id
+
+                ( example: http://localhost:8500/api/auth/delete-giftlist/64b7a04f85e356b4c783b903 )
+
+<!-- -------------GIFT REGISTRY END------------- -->
+
+
+<!-- ------------CALENDER EVENTS START ------------------>
+
+24. POST | Create Calender Events:
+    API -> http://localhost:8500/api/auth/events
+
+               //body->form data:
+               {
+                   authId:________,
+                   inviteType:__________,
+                   eventName:________,
+                   eventLocation:________,
+                   eventTime:__________,
+                   eventDate:_________,
+
+               }
+
+25. GET | Calender Events:
+            API-> http://localhost:8500/api/auth/get-events?authId=6464855699641087a53b46e0
+
+            //Params:
+             {
+               authId:"(login _id)"
+             }
+
+<!-- ------------CALENDER EVENTS END ------------------>
+
+<!-- --------------DASHBOARD COUNTS START-------------->
+26. GET | Images, Videos, polls Count:
+
+        API : http://localhost:8500/api/auth/statistics?authId=6464855699641087a53b46e0
+
+<!-- --------------DASHBOARD COUNTS END-------------->
+
+
+<!-- ----------------- CHATBOT APIS START ------------------->
+
+27. POST API : http://localhost:8500/api/auth/chatdetails
+
+                {
+                "authId": "123456",
+                "chatId": "chat123",
+                "order": 1,
+                "messages": [
+                    {
+                        "text": "Hello",
+                        "priority": 1
+                    },
+                    {
+                        "text": "There",
+                        "priority": 1
+                    }
+                ],
+                "photos": [
+                    {
+                        "public_id": "WeddingEvent/photo_1688533331700",
+                        "url": "https://res.cloudinary.com/dcsouj6ix/image/upload/v1688533332/WeddingEvent/photo_1688533331700.webp",
+                        "size": 198420,
+                        "name": "Best-Wedding-Stage-Decoration-with-Flowers.webp",
+                        "priority": 101,
+                        "_id": "64a4f9548af92949ffd58f4a"
+                    }
+                ],
+                "location": [],
+                "date": "2023-07-10",
+                "time": "12:00 PM",
+                "options": {
+                    "name": "Option 1",
+                    "order": 1,
+                    "priority": 1,
+                    "toSaveToDatabse": true,
+                    "databaseSaveUrl": "http://example.com/save",
+                    "databaseCallType": "POST",
+                    "queryObject": "query"
+                },
+                "textInput": {
+                    "order": 2,
+                    "priority": 2,
+                    "toSaveToDatabse": true,
+                    "databaseSaveUrl": "http://example.com/save",
+                    "databaseCallType": "POST",
+                    "queryObject": "query"
+                }
+            }
+
+
+
+28. GET | CHATBOT DETAILS API -> http://localhost:8500/api/auth/chatdetails?authId=6464855699641087a53b46e0
+
+
+29. PUT method to update a specific field of a wedding document
+           API : http://localhost:8500/api/auth/chatdetails/:id
+
+30.  DELETE request, set empty all fields at once not delete:
+            API: http://localhost:8500/api/auth/chatdetails/:id/set_empty
+
+31.  DELETE method to delete the entire wedding document:
+          API: http://localhost:8500/api/auth/chatdetails/:id
+
+32. DELETE method to delete a specific field in the wedding document
+           API : http://localhost:8500/api/auth/chatdetails/:id/:field
+
+            field like: messages or photos or location etc.
+
+33. DELETE method to delete a particular photo from photos 
+            API : http://localhost:8500/api/auth/chatdetails/:id/photos/:photoId
+
+34. DELETE method to delete a particular video 
+            API : http://localhost:8500/api/auth/chatdetails/:id/videos/:videoId
+
+35. POST method to add more photos 
+            API: http://localhost:8500/api/auth/chatdetails/:id/addPhotos
+
+36. POST method to add more videos 
+            API : http://localhost:8500/api/auth/chatdetails/:id/addVideos
+
+<!-- CHATBOT TITLE -->
+37. CHAT TITLE:
+    POST API : http://localhost:8500/api/auth/chattitle
+
+            {
+            authId: 
+            chatTitle:
+            uid: 
+        },
+
+38. GET http://localhost:8500/api/auth/chattitle/authId
+
+
+<!-- ----------------- CHATBOT APIS END ------------------->
+
+<!-- ---------------- INVITE CARD START --------------------- -->
+
+39. POST | INVITE CARD: 
+                    http://localhost:8500/api/auth/invite-card
+
+                    {
+                        authId:_,
+                        order:_,
+                        inviteType:_,
+                        inviteCardName:_,
+                        pdf:{
+                            pdf_file
+                        }
+                    }
+
+40. GET : http://localhost:8500/api/auth/get-invite-cards
+
+            params/query :{
+                            authId:_,
+                          }
+
+
+41. UPDATE : http://localhost:8500/api/auth/update-invite-card/:id
+
+
+42. DELETE : http://localhost:8500/api/auth/delete-invite-card/:id
+
+<!-- ---------------- INVITE CARD END --------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------REMAINING APIS-------------------------------
+
+1. IMAGE LIKE | PUT API : 
+                     http://localhost:8500/api/auth/photos/:photoId/like
+
+                    {
+                        browserId:___________,
+                    }
+
+
+2. VIDEO LIKE | PUT API : 
+                     http://localhost:8500/api/auth/videos/:videoId/like
+
+                    {
+                        browserId:___________,
+                    }
+
+
+3. POST | Create Gift list:
+
+        API: http://localhost:8500/api/auth/giftlists
+
+        //body->form data:
+        	{
+                authId:________,
+                inviteType:__________,
+                userName:___________,
+                giftName:_________,
+                receivedGift: Boolean value -> true or false,
+
+        	}
+
+        GET | Get specific Gift List by authId:
+                API : http://localhost:8500/api/auth/get-giftlists?authId=6464855699641087a53b46e0
+
+                    //Params:
+                        {
+                        authId:"(login _id)"
+                        }
+
+        PUT | Update receivedGift status:
+                API: http://localhost:8500/api/auth/giftlists/:id/gift
+
+                        //Params:
+                        {
+                        id:"(giftlists _id)"
+                        }
+
+                        //body->form data:
+                            receivedGift: Boolean value -> true or false,
+
+        DELETE a gift by ID | API :
+                 http://localhost:8500/api/auth/giftlists/:id
+
+
+
+4. ADD MORE in PLAYLIST | API :
+                    http://localhost:8500/api/auth/add-more-songs/:playlistId
+
+                    {
+                        "songs": [
+                            {
+                            "name": "Song 1",
+                            "externalUrl": "https://example.com/song1"
+                            },
+                            {
+                            "name": "Song 2",
+                            "externalUrl": "https://example.com/song2"
+                            }
+                        ]
+                    }
+
+
+5. VOTE POLL BY UID | API : 
+                    http://localhost:8500/api/auth/polls/:optionId/vote
+
+                    {
+                        browserId:_______,  
+                    }
+
+
+
+----------------------------REMAINING APIS-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------NEW API FOR CHATBOT:---------
+
+\*\*LIVE LINK : https://wedding-production-e6b8.up.railway.app
+
+1.  GET API : http://localhost:8500/api/auth/chatdetails?authId=6464855699641087a53b46e0
+
+2.  POST API : http://localhost:8500/api/auth/chatdetails3
+
+            OR
+
+            http://localhost:8500/api/auth/chatdetails
+
+      {
+    "authId": "123456",
+    "chatId": "chat123",
+    "order": 1,
+    "messages": [
+        {
+            "text": "Hello",
+            "priority": 1
+        },
+        {
+            "text": "There",
+            "priority": 1
+        }
+    ],
+    "photos": [
+        {
+            "public_id": "WeddingEvent/photo_1688533331700",
+            "url": "https://res.cloudinary.com/dcsouj6ix/image/upload/v1688533332/WeddingEvent/photo_1688533331700.webp",
+            "size": 198420,
+            "name": "Best-Wedding-Stage-Decoration-with-Flowers.webp",
+            "priority": 101,
+            "_id": "64a4f9548af92949ffd58f4a"
+        }
+    ],
+    "location": [],
+    "date": "2023-07-10",
+    "time": "12:00 PM",
+    "options": {
+        "name": "Option 1",
+        "order": 1,
+        "priority": 1,
+        "toSaveToDatabse": true,
+        "databaseSaveUrl": "http://example.com/save",
+        "databaseCallType": "POST",
+        "queryObject": "query"
+    },
+    "textInput": {
+        "order": 2,
+        "priority": 2,
+        "toSaveToDatabse": true,
+        "databaseSaveUrl": "http://example.com/save",
+        "databaseCallType": "POST",
+        "queryObject": "query"
+    }
+}
+
+
+3. chat title:
+    POST API : http://localhost:8500/api/auth/chattitle
+
+    {
+    authId: 
+    chatTitle:
+    uid: 
+  },
+
+  GET http://localhost:8500/api/auth/chattitle/authId
+
+
+
+
+
+
+
+
+
+    <!-- UPDATE APIs -->
+
+    **(:id -> document id)
+
+   1.  // PUT method to update a specific field of a wedding document
+           API : http://localhost:8500/api/auth/chatdetails/:id
+
+
+  2. // DELETE request, set empty all fields at once not delete:
+            API: http://localhost:8500/api/auth/chatdetails/:id/set_empty
+
+
+  3. // DELETE method to delete the entire wedding document:
+          API: http://localhost:8500/api/auth/chatdetails/:id
+          
+
+  4. // DELETE method to delete a specific field in the wedding document
+           API : http://localhost:8500/api/auth/chatdetails/:id/:field
+
+            field like: messages or photos or location etc.
+
+
+  5. // DELETE method to delete a particular photo from photos 
+            API : http://localhost:8500/api/auth/chatdetails/:id/photos/:photoId
+
+
+  6. // DELETE method to delete a particular video 
+            API : http://localhost:8500/api/auth/chatdetails/:id/videos/:videoId
+        
+        
+  7. // POST method to add more photos 
+            API: http://localhost:8500/api/auth/chatdetails/:id/addPhotos
+
+
+  8. // POST method to add more videos 
+            API : http://localhost:8500/api/auth/chatdetails/:id/addVideos
+
+    <!-- UPDATE APIs -->
+
+-------------------------NEW API FOR CHATBOT:-----------------------
+
+Wedding Application APi:
+
+API-> https://wedding-production-e6b8.up.railway.app
+
+1. welcome details messages payload  
+   End Point: http://localhost:8500/api/welcomemessages
+
+{
+"authId":(\_\_\_\_),
+"messages":[
+"hello",
+"there"
+],
+"photo":"single photo"
+
+}
+
+2.wedding details payload:
+End point: http://localhost:8500/api/weddingeventdetails
+
+{
+"authId":(**\_**),
+"venue":"Delhi",
+"location":"noida",
+"date":"2023-05-05",
+"time":"07",
+"photos":[{
+"mutiple photos"
+}]
+}
+
+ENDPOINTS:
+
+1.  POST | Add user -> http://localhost:8500/api/adduser
+
+2.  GET | getalluser -> http://localhost:8500/api/adduser
+
+3.  GET | MERGE DETAILS -> http://localhost:8500/api/mergedetails?authId=6464855699641087a53b46e0
+
+4.  POST | REGISTER -> http://localhost:8500/api/auth/register
+    //body->form-data:
+    {
+    authName:"Akash",
+    authEmail:"akash@gmail.com",
+    authPassword:"123456"
+    }
+
+5.  POST | LOGIN -> http://localhost:8500/api/auth/login
+
+            //body->form-data:
+            {
+                authEmail:"akash@gmail.com",
+                authPassword:"123456"
+            }
+
+6.  POST | ADD COLLECTION: -> http://localhost:8500/api/auth/add-collection
+    //body->form-data:
+    {
+    authId:"(login \_id)",
+    collectionName:"Anything",
+    inviteType:"general/close"
+    photos:{
+    multiple files
+    }
+    }
+
+POST | ADD MORE PHOTOS: -> http://localhost:8500/api/auth/add-morephoto
+
+                {
+                    collectionId:(collection _id),
+                    photos:{
+
+                    }
+                }
+
+GET | GET PARTICULER USER COLLECTIONS: -> http://localhost:8500/api/auth/get-collection?authId=(login \_id)
+
+            //Params:
+             {
+               authId:"(login _id)"
+            }
+
+9. POST | ADD VIDEO COLLECTION: -> http://localhost:8500/api/auth/add-video-collection
+   //body->form-data:
+   {
+   authId:"(login \_id)",
+   videoCollectionName:"Anything",
+   inviteType:"general/close"
+   videos:{
+   multiple files
+   }
+   }
+
+POST | ADD MORE VIDEOS: -> http://localhost:8500/api/auth/add-video-more
+
+                {
+                    collectionId:(collection _id),
+                    videos:{
+
+                    }
+                }
+
+GET | GET PARTICULER USER VIDEOs COLLECTIONS: -> http://localhost:8500/api/auth//get-video-collection?authId=6464855699641087a53b46e0
+
+            //Params:
+             {
+               authId:"(login _id)"
+            }
+
+10. POST | POLL:
+    API: http://localhost:8500/api/auth/polls
+
+    //body->form data:
+    {
+    authId:**\_\_\_\_**,
+    inviteType:**\_\_\_\_**,
+    question:**\_\_\_**,
+    options:**\_\_\_\_**,
+    options:**\_\_\_\_**,
+    options:**\_\_\_\_**,
+    options:**\_\_\_\_**,
+    }
+
+// PUT | Update the vote count on click particular option:
+API: http://localhost:8500/api/auth/polls/:id/vote
+
+            //Params:
+             {
+               id:"(poll _id)"
+            }
+
+            //body->form data:
+                optionIndex : (option _id),
+
+GET | Get specific polls by authId:
+API: http://localhost:8500/api/auth/get-polls?authId=(auth \_id)
+
+         //Params:
+             {
+               authId:"(login _id)"
+             }
+
+11. POST | Create Music playlist:
+
+        API: http://localhost:8500/api/auth/playlists
+
+        //body->form data:
+        	{
+                authId:________,
+                inviteType:__________,
+                playListName:_________,
+                playListUrl:________,
+
+        	}
+
+GET | Get specific Playlist by authId:
+API : http://localhost:8500/api/auth/get-playlists?authId=6464855699641087a53b46e0
+
+        //Params:
+             {
+               authId:"(login _id)"
+             }
+
+12. POST | Create Gift list:
+
+        API: http://localhost:8500/api/auth/giftlists
+
+        //body->form data:
+        	{
+                authId:________,
+                inviteType:__________,
+                giftName:_________,
+                receivedGift: Boolean value -> true or false,
+
+        	}
+
+GET | Get specific Gift List by authId:
+API : http://localhost:8500/api/auth/get-giftlists?authId=6464855699641087a53b46e0
+
+        //Params:
+             {
+               authId:"(login _id)"
+             }
+
+PUT | Update receivedGift status:
+API: http://localhost:8500/api/auth/giftlists/:id/gift
+
+            //Params:
+             {
+               id:"(giftlists _id)"
+            }
+
+            //body->form data:
+                 receivedGift: Boolean value -> true or false,
+
+13. POST | Create Calender Events:
+    API -> http://localhost:8500/api/auth/events
+
+               //body->form data:
+               {
+                   authId:________,
+                   inviteType:__________,
+                   eventName:________,
+                   eventLocation:________,
+                   eventTime:__________,
+                   eventDate:_________,
+
+               }
+
+
+    GET | Calender Events:
+            API-> http://localhost:8500/api/auth/get-events?authId=6464855699641087a53b46e0
+
+            //Params:
+             {
+               authId:"(login _id)"
+             }
+
+14. GET | Images, Videos, polls Count:
+
+        API : http://localhost:8500/api/auth/statistics?authId=6464855699641087a53b46e0
+
+3.wedding images payload : (no need now)
+End Point:localhost:8500/api/weddingimages
+{
+"userid":1,
+"weddingimages":[
+"image.jpg",
+"image1.jpg",
+"image2.jpg"
+
+      ]
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
